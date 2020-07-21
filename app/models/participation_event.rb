@@ -1,0 +1,2 @@
+class ParticipationEvent < ApplicationRecord
+end
