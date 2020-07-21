@@ -1,0 +1,2 @@
+class ParticipationCommunity < ApplicationRecord
+end
