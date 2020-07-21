@@ -5,6 +5,6 @@ class User < ApplicationRecord
   has_many :participation_communities, dependent: :destroy
 
   validates :name, presence: true, length: {maximum: 10, minimum: 2}
-  validates :email, presence: true
+  validates :email, presence: true, length: {maximum: 20, minimum: 2}
   validates :uid, presence: true
 end
