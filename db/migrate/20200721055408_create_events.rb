@@ -8,8 +8,8 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.date :end_date
       t.time :end_time
       t.string :place
-      t.integer :user_id
-      t.integer :community_id
+      t.bigint :user_id
+      t.bigint :community_id
       t.boolean :is_private, default:false
 
       t.timestamps
