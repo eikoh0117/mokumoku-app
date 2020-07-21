@@ -1,0 +1,2 @@
+class TagEvent < ApplicationRecord
+end
