@@ -1,4 +1,8 @@
 class V1::EventsController < ApplicationController
+    def index
+      events = Event.select(:id, :title, :detail, :start_date, :start_time, :end_date, :end_time, :place, :user_id)
+      render json: events
+    end
     def create
       event = Event.new(event_params)
       if event.save!
