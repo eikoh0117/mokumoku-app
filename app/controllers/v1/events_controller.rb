@@ -1,7 +1,7 @@
 class V1::EventsController < ApplicationController
     def create
       event = Event.new(event_params)
-      if event.save
+      if event.save!
         render json: event, status: :created
       else
         render json: event.errors, status: :unprocessable_entity
