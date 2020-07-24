@@ -3,8 +3,8 @@ class CreateParticipationEvents < ActiveRecord::Migration[6.0]
     create_table :participation_events do |t|
       t.bigint :event_id, null:false
       t.bigint :user_id, null:false
-      t.text :purpose, null:false
-      t.text :achivement, null:false
+      t.text :purpose
+      t.text :achivement
 
       t.timestamps
     end

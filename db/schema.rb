@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 2020_07_21_061437) do
   create_table "participation_events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "event_id", null: false
     t.bigint "user_id", null: false
-    t.text "purpose", null: false
-    t.text "achivement", null: false
+    t.text "purpose"
+    t.text "achivement"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
