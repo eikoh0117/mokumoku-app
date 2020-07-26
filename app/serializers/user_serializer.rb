@@ -9,5 +9,6 @@ class UserSerializer < ActiveModel::Serializer
   def user_participation_events
     user_events = object.participation_events.pluck(:event_id)
     events = Event.where(id: user_events)
+    return events
   end
 end
