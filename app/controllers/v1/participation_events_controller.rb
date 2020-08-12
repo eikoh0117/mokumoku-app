@@ -7,6 +7,12 @@ class V1::ParticipationEventsController < ApplicationController
       render json: participation_event.errors, status: :unprocessable_entity
     end
   end
+  def destroy
+    participation_event = ParticipationEvent.find(params[:id])
+    if participation_event.destroy
+      render json: participation_event
+    end
+  end
 
   private
   def participation_event_params
