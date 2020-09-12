@@ -1,6 +1,7 @@
 class V1::EventsController < ApplicationController
     def index
-      events = Event.select(:id, :title, :detail, :start_date, :start_time, :end_date, :end_time, :place, :user_id)
+      # events = Event.select(:id, :title, :detail, :start_time, :end_time, :place, :user_id)
+      events = Event.includes(:user)
       render json: events
     end
     def create
@@ -21,6 +22,6 @@ class V1::EventsController < ApplicationController
 
     private
       def event_params
-        params.require(:event).permit(:title, :detail, :start_date, :start_time, :end_date, :end_time, :place, :community_id, :user_id, :is_private)
+        params.require(:event).permit(:title, :detail, :start_time, :end_time, :place, :community_id, :user_id, :is_private)
       end
 end
