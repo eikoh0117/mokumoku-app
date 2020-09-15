@@ -23,12 +23,25 @@ class EventSerializer < ActiveModel::Serializer
   end
 
   def start_time_for_display
-    date_and_time = "#{object.start_time.month}月#{object.start_time.day}日 #{object.start_time.to_s[11, 2]}:#{object.start_time.to_s[14, 2]}"
+    date = "#{object.start_time.month}月#{object.start_time.day}日"
+    if object.start_time.hour.to_s.length == 1
+      time = "#{"     "}#{object.start_time.to_s[12, 1]}:#{object.start_time.to_s[14, 2]}"
+    else
+      time = "#{object.start_time.to_s[11, 2]}:#{object.start_time.to_s[14, 2]}"
+    end
+    date_and_time = "#{date} #{time}"
     return date_and_time
   end
 
   def end_time_for_display
-    date_and_time = "#{object.end_time.month}月#{object.end_time.day}日 #{object.end_time.to_s[11, 2]}:#{object.end_time.to_s[14, 2]}"
+    date = "#{object.end_time.month}月#{object.end_time.day}日"
+    if object.end_time.hour.to_s.length == 1
+      time = "#{object.end_time.to_s[12, 1]}:#{object.end_time.to_s[14, 2]}"
+    else
+      time = "#{object.end_time.to_s[11, 2]}:#{object.end_time.to_s[14, 2]}"
+    end
+    date_and_time = "#{date} #{time}"
     return date_and_time
   end
+
 end
