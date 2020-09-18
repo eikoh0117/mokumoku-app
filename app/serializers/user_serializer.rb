@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :email, :user_participation_events, :user_participation_events_ids
+  attributes :id, :name, :email, :user_participation_events
 
   has_many :events
   # has_many :communities
@@ -12,9 +12,9 @@ class UserSerializer < ActiveModel::Serializer
     return events
   end
 
-  def user_participation_events_ids
-    user_events = object.participation_events.pluck(:event_id)
-    events = Event.where(id: user_events)
-    return events.pluck(:id)
-  end
+  # def user_participation_events_ids
+  #   user_events = object.participation_events.pluck(:event_id)
+  #   events = Event.where(id: user_events)
+  #   return events.pluck(:id)
+  # end
 end
