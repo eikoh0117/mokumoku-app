@@ -6,7 +6,7 @@ class V1::EventsController < ApplicationController
   end
   def create
     event = Event.new(event_params)
-    if event.save!
+    if event.save
       participation_event = ParticipationEvent.new(event_id: event.id, user_id: event.user_id)
       if participation_event.save!
         render json: event, status: :created
