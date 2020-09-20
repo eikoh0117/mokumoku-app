@@ -25,7 +25,7 @@ class EventSerializer < ActiveModel::Serializer
   def start_time_for_display
     date = "#{object.start_time.month}月#{object.start_time.day}日"
     if object.start_time.hour.to_s.length == 1
-      time = "#{"     "}#{object.start_time.to_s[12, 1]}:#{object.start_time.to_s[14, 2]}"
+      time = "#{object.start_time.to_s[12, 1]}:#{object.start_time.to_s[14, 2]}"
     else
       time = "#{object.start_time.to_s[11, 2]}:#{object.start_time.to_s[14, 2]}"
     end
