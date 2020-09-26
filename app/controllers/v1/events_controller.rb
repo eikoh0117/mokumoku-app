@@ -11,6 +11,7 @@ class V1::EventsController < ApplicationController
       render json: events
     end
   end
+
   def create
     event = Event.new(event_params)
     if event.save
@@ -23,11 +24,20 @@ class V1::EventsController < ApplicationController
     end
   end
 
+  def update
+    event = Event.find(params[:id])
+    if event.update(event_params)
+      render json: event, status: :accepted
+    else
+      render json: event.errors, status: :unprocessable_entity
+    end
+  end
+
   def destroy
-      event = Event.find(params[:id])
-      if event.destroy
-          render json: event
-      end
+    event = Event.find(params[:id])
+    if event.destroy
+        render json: event
+    end
   end
 
   private
