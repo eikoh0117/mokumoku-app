@@ -27,7 +27,7 @@ class V1::EventsController < ApplicationController
   def update
     event = Event.find(params[:id])
     if event.update!(event_params)
-      render json: event, status: :updated
+      render json: event, status: :accepted
     else
       render json: event.errors, status: :unprocessable_entity
     end
