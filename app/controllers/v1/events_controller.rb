@@ -1,15 +1,7 @@
 class V1::EventsController < ApplicationController
   def index
-    # events = Event.select(:id, :title, :detail, :start_time, :end_time, :place, :user_id)
-    if params[:user_id]
-      participation_events = ParticipationEvent.where(user_id: params[:user_id])
-      participation_events_ids = participation_events.pluck(:event_id)
-      events = Event.where(id: participation_events_ids)
-      render json: events
-    else
       events = Event.includes(:user)
       render json: events
-    end
   end
 
   def create
