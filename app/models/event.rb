@@ -5,10 +5,9 @@ class Event < ApplicationRecord
   belongs_to :user
   # belongs_to :community
 
-  validates :title, presence: true, length: {maximum: 20, minimum: 1}
-  validates :detail, length: {maximum: 200}
+  validates :title, presence: true, length: { maximum: 20, minimum: 1 }
+  validates :detail, length: { maximum: 200 }
   validates :start_time, presence: true
-  validates :place, presence: true, length: {maximum: 100}
+  validates :place, presence: true, length: { maximum: 100 }
   validates :user_id, presence: true
-
 end
