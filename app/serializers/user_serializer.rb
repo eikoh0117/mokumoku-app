@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :email #, :user_participation_events
+  attributes :id, :name, :email # , :user_participation_events
 
   # has_many :events
   # has_many :communities
