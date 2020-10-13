@@ -45,3 +45,4 @@ end
 gem 'active_model_serializers'
 gem 'rack-cors'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'dotenv-rails'
