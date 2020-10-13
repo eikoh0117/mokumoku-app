@@ -4,4 +4,5 @@ Rails.application.routes.draw do
     resources :users, only: %i[index create]
     resources :participation_events, only: %i[create destroy index]
   end
+  root 'v1/users#index'
 end
