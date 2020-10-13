@@ -1,6 +1,6 @@
 class Community < ApplicationRecord
   # has_many :events
-  has_many :participation_communities, depentent: :destroy
+  has_many :participation_communities, dependent: :destroy
 
   belongs_to :user
 
