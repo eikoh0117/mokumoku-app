@@ -215,7 +215,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
-  unicorn (= 5.4.1)
+  unicorn
 
 RUBY VERSION
    ruby 2.7.1p83
